@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0f1117;
+    --bg-secondary: #161b27;
+    --bg-card: #1c2333;
+    --bg-hover: #232b3e;
+    --border: #2d3748;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #556ef5;
+    --accent-hover: #3d4fea;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #2d3748; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4a5568; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-lg
+           transition-all duration-200 flex items-center gap-2 disabled:opacity-50
+           disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2
+           focus:ring-offset-gray-900;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-[var(--border)] hover:bg-[var(--bg-hover)]
+           text-[var(--text-primary)] font-medium px-4 py-2 rounded-lg transition-all duration-200
+           flex items-center gap-2 focus:outline-none;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-[var(--bg-hover)] text-[var(--text-secondary)]
+           hover:text-[var(--text-primary)] px-3 py-1.5 rounded-lg transition-all duration-150
+           flex items-center gap-2;
+  }
+
+  .card {
+    @apply bg-[var(--bg-card)] border border-[var(--border)] rounded-xl;
+  }
+
+  .input {
+    @apply w-full bg-[var(--bg-secondary)] border border-[var(--border)] rounded-lg px-3 py-2.5
+           text-[var(--text-primary)] placeholder-[var(--text-muted)] text-sm
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-[var(--text-secondary)] mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-[var(--text-secondary)]
+           hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)]
+           transition-all duration-150 text-sm font-medium cursor-pointer;
+  }
+
+  .sidebar-link.active {
+    @apply bg-brand-600/20 text-brand-400 border border-brand-600/30;
+  }
+}
