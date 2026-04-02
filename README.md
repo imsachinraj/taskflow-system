@@ -107,19 +107,51 @@
 ```
 taskflow/
 ├── backend/
+│   └── src/
+│       ├── config/         # Database configuration
+│       ├── controllers/    # API request handlers
+│       ├── middleware/     # Auth & error handling
+│       ├── models/         # Mongoose schemas
+│       ├── routes/         # API routes
+│       ├── services/       # Business logic
+│       ├── sockets/        # Socket.io events
+│       ├── utils/          # Helpers & utilities
+│       ├── validators/     # Input validation
+│       ├── app.js          # Express app
+│       └── server.js       # Server entry point
+│
+├── frontend/
+│   └── src/
+│       ├── components/
+│       │   ├── auth/       # Login/Register
+│       │   ├── common/     # Shared UI components
+│       │   ├── tasks/      # Task-related UI
+│       │   └── teams/      # Team-related UI
+│       ├── hooks/          # Custom hooks
+│       ├── pages/          # App pages
+│       ├── services/       # API services
+│       ├── store/          # State management
+│       └── styles/         # Styling (Tailwind)
+│
+└── docs/
+    └── API.md              # API documentation
+```
+
+taskflow/
+├── backend/
 ├── frontend/
 └── docs/
-```
+
+````
 
 ---
 
 ## ⚡ Getting Started
 
 ### Prerequisites
-
-* Node.js (v18+)
-* MongoDB Atlas
-* Git
+- Node.js (v18+)
+- MongoDB Atlas
+- Git
 
 ### 🔧 Backend Setup
 
@@ -128,7 +160,7 @@ cd backend
 cp .env.example .env
 npm install
 npm run dev
-```
+````
 
 ### 💻 Frontend Setup
 
@@ -216,7 +248,7 @@ If you like this project:
 ## 👩‍💻 Author
 
 **Sachin Raj**
-Final Year Engineering Student | MERN Developer | UI/UX Enthusiast
+
 
 ---
 
