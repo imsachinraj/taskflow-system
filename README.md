@@ -215,7 +215,7 @@ If you like this project:
 
 ## 👩‍💻 Author
 
-**Komatla Naga Lakshmi**
+**Sachin Raj**
 Final Year Engineering Student | MERN Developer | UI/UX Enthusiast
 
 ---
